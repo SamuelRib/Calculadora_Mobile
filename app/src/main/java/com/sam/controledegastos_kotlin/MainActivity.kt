@@ -15,6 +15,8 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        supportActionBar?.hide()
+
         var resultado = binding.txtResultado
         val campoDados = binding.campoDados
         val entrada = binding.btMais
