@@ -19,10 +19,12 @@ class MainActivity : AppCompatActivity() {
 
         var resultado = binding.txtResultado
         val campoDados = binding.campoDados
-        val entrada = binding.btMais
-        val saida = binding.btMenos
+        val btMais = binding.btMais
+        val btMenos = binding.btMenos
+        val btMultipicacao = binding.btMultiplicacao
+        val btDivisao = binding.btDivisao
 
-        entrada.setOnClickListener {
+        btMais.setOnClickListener {
 
             var dados = campoDados.text.toString()
             var resultadoInicial = resultado.text.toString()
@@ -35,7 +37,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        saida.setOnClickListener {
+        btMenos.setOnClickListener {
             var dados = campoDados.text.toString()
             var resultadoInicial = resultado.text.toString()
 
@@ -46,6 +48,34 @@ class MainActivity : AppCompatActivity() {
                 calcularDadosSubtracao()
             }
         }
+
+        btMultipicacao.setOnClickListener {
+
+            var dados = campoDados.text.toString()
+            var resultadoInicial = resultado.text.toString()
+
+            if (dados.isEmpty()){
+
+                Snackbar.make(it,"Preencha o campo vazio!",Snackbar.LENGTH_SHORT).show()
+            } else{
+                calcularDadosMultiplicacao()
+            }
+        }
+
+        btDivisao.setOnClickListener {
+
+            var dados = campoDados.text.toString()
+            var resultadoInicial = resultado.text.toString()
+
+            if (dados.isEmpty()){
+
+                Snackbar.make(it,"Preencha o campo vazio!",Snackbar.LENGTH_SHORT).show()
+            } else{
+                calcularDadosDivisao()
+            }
+        }
+
+
     }
 
 
@@ -73,5 +103,27 @@ class MainActivity : AppCompatActivity() {
         val calculo = resultado2 - campoDados2
         val exibirResultado = resultado.setText(calculo.toString())
         val apagarCampoDados = campoDados.setText("").toString()
+    }
+
+    fun calcularDadosMultiplicacao(){
+        val resultado = binding.txtResultado
+        val campoDados = binding.campoDados
+        val resultado2 = java.lang.Float.parseFloat(resultado.text.toString())
+        val campoDados2 = java.lang.Float.parseFloat(campoDados.text.toString())
+        val calculo = resultado2 * campoDados2
+        val exibirResultado = resultado.setText(calculo.toString())
+        val apagarCampoDados = campoDados.setText("").toString()
+
+    }
+
+    fun calcularDadosDivisao(){
+        val resultado = binding.txtResultado
+        val campoDados = binding.campoDados
+        val resultado2 = java.lang.Float.parseFloat(resultado.text.toString())
+        val campoDados2 = java.lang.Float.parseFloat(campoDados.text.toString())
+        val calculo = resultado2 / campoDados2
+        val exibirResultado = resultado.setText(calculo.toString())
+        val apagarCampoDados = campoDados.setText("").toString()
+
     }
 }

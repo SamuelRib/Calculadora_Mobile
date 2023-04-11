@@ -40,13 +40,29 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
         android:backgroundTint="@color/green"
-        android:textColor="@color/black"
         android:text="+"
+        android:textColor="@color/black"
         android:textSize="34sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/btMenos"
         app:layout_constraintHorizontal_bias="0.567"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/campoDados" />
+
+    <Button
+        android:id="@+id/btMultiplicacao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/blue"
+        android:text="x"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/btMenos"
+        app:layout_constraintHorizontal_bias="0.567"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btMais" />
 
     <Button
         android:id="@+id/btMenos"
@@ -54,10 +70,25 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="80dp"
         android:text="-"
+        android:textStyle="bold"
         android:backgroundTint="@color/red"
         android:textColor="@color/black"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/btMais" />
+
+    <Button
+        android:id="@+id/btDivisao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="80dp"
+        android:backgroundTint="#FF9800"
+        android:text="/"
+        android:textColor="@color/black"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btMenos" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
